@@ -16,6 +16,8 @@ namespace AppForSEII.API.Models
 
         public int UsuarioId{get;set;}
 
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Fecharesena{get;set;}
     }
 }
