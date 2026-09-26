@@ -10,6 +10,8 @@ namespace AppForSEII.API.Models
             UsuarioId = usuarioId;
         }
         public int Id{get;set;}
+
+        [StringLength(20, MinimumLength = 10, ErrorMessage = "El título debe tener entre 10 y 20 caracteres.")]
         public string Titulo{get;set;}
 
         public int UsuarioId{get;set;}
