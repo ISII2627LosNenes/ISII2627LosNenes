@@ -12,7 +12,8 @@ namespace AppForSEII.API.Models
 
     public int Id{get;set;}
 
-    
+    [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
+    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
     public DateTime FechaCompra{get;set;}
 
     public double PrecioTotal{get;set;}
