@@ -10,8 +10,12 @@ namespace AppForSEII.API.Models
             Comentario = comentario;
         }
         public int Id { get; set; }
+        
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime FechaReposicion { get; set; }
         public decimal PrecioTotal { get; set; }
+        [StringLength(100, MinimumLength = 20, ErrorMessage = "El comentario debe tener entre 20 y 100 caracteres.")]
         public string? Comentario { get; set; }
     }
 }
