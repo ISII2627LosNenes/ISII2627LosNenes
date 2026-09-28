@@ -24,6 +24,9 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Compra> Compra{get;set;}
     public DbSet<Reposicion> Reposicion{get;set;}
 
+    public DbSet<CompraItem> CompraItem{get;set;}
+
+
     public DbSet<Editorial> Editorial{get;set;}
 
 
