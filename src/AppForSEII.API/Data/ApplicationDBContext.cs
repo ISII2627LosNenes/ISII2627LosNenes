@@ -20,6 +20,8 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
 
     public DbSet<Resena> Resena{get;set;}
 
+    public DbSet<Reposicion> Reposicion{get;set;}
+
 
 
 
