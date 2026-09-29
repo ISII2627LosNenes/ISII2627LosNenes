@@ -2,6 +2,11 @@ namespace AppForSEII.API.Models
 {
     public class Libro
     {
+        public Libro()
+        {
+            CompraItems = new List<CompraItem>();
+            ResenaItems = new List<ResenaItem>();
+        }
         public Libro(int id, string titulo, string tipoLibro, string autor, int calificacionMedia, DateTime fechaLanzamiento, IList<CompraItem> compraItems, IList<ResenaItem> resenaItems)
         {
             Id = id;
