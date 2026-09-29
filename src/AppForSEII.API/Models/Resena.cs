@@ -2,11 +2,12 @@ namespace AppForSEII.API.Models
 {
     public class Resena
     {
-        public Resena(int id, DateTime fecharesena, string titulo)
+        public Resena(int id, DateTime fecharesena, string titulo, IList<ResenaItem> resenaItems)
         {
             Id = id;
             Fecharesena = fecharesena;
             Titulo = titulo;
+            ResenaItems = resenaItems;
          
         }
         public int Id{get;set;}
@@ -19,5 +20,7 @@ namespace AppForSEII.API.Models
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Fecharesena{get;set;}
+
+        public IList<ResenaItem> ResenaItems { get; set; }
     }
 }
