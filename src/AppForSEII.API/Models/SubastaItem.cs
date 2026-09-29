@@ -3,6 +3,10 @@ namespace AppForSEII.API.Models
     [PrimaryKey(nameof(SubastaId),nameof(LibroId))]
     public class SubastaItem
     {
+        public SubastaItem()
+        {
+            
+        }
         public SubastaItem(Subasta subasta,  string? descripcion, decimal precioPuja, Libro libro)
         {
             SubastaId = subasta.Id;
