@@ -3,17 +3,21 @@ namespace AppForSEII.API.Models
     [PrimaryKey(nameof(LibroId), nameof(ResenaId))]
     public class ResenaItem
     {
-        public ResenaItem(int calificacion, string descricion, int libroId, int resenaId)
+        public ResenaItem(int calificacion, string descricion, int libroId, Libro libro, Resena resena, int resenaId)
         {
             Descripcion = descricion;
             Calificacion = calificacion;
             LibroId = libroId;
             ResenaId = resenaId;
+            Libro = libro;
+            Resena = resena;
          
         }
 
+        public Libro Libro{get;set;}
         public int LibroId{get;set;}
 
+        public Resena Resena{get;set;}
         public int ResenaId{get;set;}
 
         [StringLength(100, MinimumLength = 20, ErrorMessage = "La descricion tiene que tener entre 20 y 100 caracteres")]
