@@ -3,9 +3,8 @@ namespace AppForSEII.API.Models
     [PrimaryKey(nameof(LibroId), nameof(ResenaId))]
     public class ResenaItem
     {
-        public ResenaItem(int id, int calificacion, string descricion, int libroId, int resenaId)
+        public ResenaItem(int calificacion, string descricion, int libroId, int resenaId)
         {
-            Id = id;
             Descripcion = descricion;
             Calificacion = calificacion;
             LibroId = libroId;
@@ -13,7 +12,6 @@ namespace AppForSEII.API.Models
          
         }
 
-        public int Id{get;set;}
         public int LibroId{get;set;}
 
         public int ResenaId{get;set;}
