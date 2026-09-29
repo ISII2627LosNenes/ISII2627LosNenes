@@ -23,8 +23,9 @@ namespace AppForSEII.API.Models
         [Precision(5, 2)]
         public decimal PrecioSubasta{get;set;}
 
-            public List<SubastaItem> SubastaItems { get; set; } 
+        public List<SubastaItem> SubastaItems { get; set; } 
 
+        public MetodoPago MetodoPago { get; set; }
 
     }
 

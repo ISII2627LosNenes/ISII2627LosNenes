@@ -22,6 +22,6 @@ namespace AppForSEII.API.Models
         public decimal PrecioPuja { get; set; }
 
         public List<Libro> Libros { get; set; } 
-
+        
     }
 }
