@@ -6,12 +6,13 @@ namespace AppForSEII.API.Models
         {
             ResenaItems = new List<ResenaItem>();
         }
-        public Resena(int id, DateTime fecharesena, string titulo, IList<ResenaItem> resenaItems)
+        public Resena(int id, DateTime fecharesena, string titulo, IList<ResenaItem> resenaItems, ApplicationUser cliente)
         {
             Id = id;
             Fecharesena = fecharesena;
             Titulo = titulo;
             ResenaItems = resenaItems;
+            Cliente = cliente;
          
         }
         public int Id{get;set;}
@@ -26,5 +27,7 @@ namespace AppForSEII.API.Models
         public DateTime Fecharesena{get;set;}
 
         public IList<ResenaItem> ResenaItems { get; set; }
+
+        public virtual ApplicationUser Cliente { get; set; } //Para ver que este el usuario registrado y que pueda hacer la reseña, si no esta registrado no puede hacer la reseña
     }
 }
