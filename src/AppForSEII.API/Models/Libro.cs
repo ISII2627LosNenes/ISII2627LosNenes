@@ -24,6 +24,8 @@ namespace AppForSEII.API.Models
          [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime FechaLanzamiento{get;set;}
+
+        public IList<CompraItem> CompraItems { get; set; }
         
     }
 }
