@@ -32,5 +32,6 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<MetodoPago> MetodoPago{get;set;}
     public DbSet<Libro> Libro{get;set;}
 
+    public DbSet<ResenaItem> ResenaItem{get;set;}
 
 }
