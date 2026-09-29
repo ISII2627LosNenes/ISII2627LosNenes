@@ -2,7 +2,7 @@ namespace AppForSEII.API.Models
 {
     public class Libro
     {
-        public Libro(int id, string titulo, string tipoLibro, string autor, int calificacionMedia, DateTime fechaLanzamiento)
+        public Libro(int id, string titulo, string tipoLibro, string autor, int calificacionMedia, DateTime fechaLanzamiento, IList<CompraItem> compraItems, IList<ResenaItem> resenaItems)
         {
             Id = id;
             Titulo = titulo;
@@ -10,6 +10,7 @@ namespace AppForSEII.API.Models
             Autor = autor;
              CalificacionMedia = calificacionMedia;
             FechaLanzamiento = fechaLanzamiento;
+            ResenaItems = resenaItems;
         }
 
         public int Id{get;set;}
@@ -26,6 +27,8 @@ namespace AppForSEII.API.Models
         public DateTime FechaLanzamiento{get;set;}
 
         public IList<CompraItem> CompraItems { get; set; }
+
+        public IList<ResenaItem> ResenaItems { get; set; }
         
     }
 }
