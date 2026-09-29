@@ -36,5 +36,6 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Genero> Genero{get;set;}
 
     public DbSet<ResenaItem> ResenaItem{get;set;}
+    public DbSet<GooglePay> GooglePay{get;set;}
     public DbSet<Paypal> Paypal{get;set;}
 }
