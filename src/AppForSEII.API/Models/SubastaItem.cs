@@ -3,7 +3,7 @@ namespace AppForSEII.API.Models
     [PrimaryKey(nameof(SubastaId))]
     public class SubastaItem
     {
-        public SubastaItem(Subasta subasta,  string? descripcion, decimal precioPuja)
+        public SubastaItem(Subasta subasta,  string? descripcion, decimal precioPuja, List<Libro> libros)
         {
             SubastaId = subasta.Id;
             Descripcion = descripcion;
@@ -20,6 +20,8 @@ namespace AppForSEII.API.Models
 
         [Precision(10, 2)]
         public decimal PrecioPuja { get; set; }
+
+        public List<Libro> Libros { get; set; } 
 
     }
 }
