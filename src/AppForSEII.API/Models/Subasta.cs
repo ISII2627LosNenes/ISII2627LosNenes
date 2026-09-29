@@ -2,11 +2,13 @@ namespace AppForSEII.API.Models
 {
     public class Subasta
     {
-        public Subasta(int id, DateTime fechasubasta, decimal precio)
+        public Subasta(int id, DateTime fechasubasta, decimal precio, List<SubastaItem> subastaItems)
         {
             Id = id;
             FechaSubasta = fechasubasta;
             PrecioSubasta = precio;
+            SubastaItems = subastaItems;
+
 
         }
 
@@ -20,6 +22,10 @@ namespace AppForSEII.API.Models
         [DataType(System.ComponentModel.DataAnnotations.DataType.Currency)]
         [Precision(5, 2)]
         public decimal PrecioSubasta{get;set;}
+
+        public List<SubastaItem> SubastaItems { get; set; } 
+
+        public MetodoPago MetodoPago { get; set; }
 
     }
 
