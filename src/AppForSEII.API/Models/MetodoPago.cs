@@ -6,7 +6,9 @@ namespace AppForSEII.API.Models
         {
             Id = id;
         }
-
+        public MetodoPago()
+        {
+        }
         public int Id { get; set; }
         
     }
