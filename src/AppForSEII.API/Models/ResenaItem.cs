@@ -3,6 +3,9 @@ namespace AppForSEII.API.Models
     [PrimaryKey(nameof(LibroId), nameof(ResenaId))]
     public class ResenaItem
     {
+        public ResenaItem()
+        {
+        }
         public ResenaItem(int calificacion, string descricion, int libroId, Libro libro, Resena resena, int resenaId)
         {
             Descripcion = descricion;
