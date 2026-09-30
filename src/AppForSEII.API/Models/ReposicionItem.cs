@@ -11,7 +11,7 @@ namespace AppForSEII.API.Models
             Libro = libro;
             Reposicion = reposicion;
         }
-        
+        [Range(2, int.MaxValue, ErrorMessage = "La cantidad de reposición debe ser mayor a 1")]
         public int CantidadReposicion { get; set; }
         public int ReposicionId { get; set; }
         public int LibroId { get; set; }
