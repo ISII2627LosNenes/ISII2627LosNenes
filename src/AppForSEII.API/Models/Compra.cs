@@ -30,7 +30,7 @@ namespace AppForSEII.API.Models
         public DateTime FechaCompra{get;set;}
 
         [Precision(10, 2)]
-        public double PrecioTotal{get;set;}
+        public decimal PrecioTotal{get;set;}
 
         [StringLength(10, MinimumLength = 5, ErrorMessage = "El código de descuento debe tener entre 5 y 10 caracteres.")]
          public string CodigoDescuento { get; set; }
