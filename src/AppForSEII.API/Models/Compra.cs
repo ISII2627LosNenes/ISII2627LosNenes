@@ -7,14 +7,14 @@ namespace AppForSEII.API.Models
             CompraItems = new List<CompraItem>();
         }
 
-        public Compra(int id, DateTime fechaCompra, Ilist <CompraItem> compraItems, string codigoDescuento=null):
+        public Compra(int id, DateTime fechaCompra, IList <CompraItem> compraItems, string codigoDescuento=null):
          this(fechaCompra, compraItems, codigoDescuento)
         {
             Id = id;
         }
 
 
-        public Compra(DateTime fechaCompra, Ilist <CompraItem> compraItems, string codigoDescuento=null)
+        public Compra(DateTime fechaCompra, IList <CompraItem> compraItems, string codigoDescuento=null)
         {
             PrecioTotal = decimal.Round(compraItems.Sum(ci => ci.Libro.PrecioCompra * ci.Cantidad), 2);
             FechaCompra = fechaCompra;
