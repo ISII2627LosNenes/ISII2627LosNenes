@@ -38,9 +38,8 @@ namespace AppForSEII.API.Models
 
         public int MetodoPagoID { get; set; }
 
+fhfjfh
 
-
-        public virtual ApplicationUser Cliente { get; set; } //Para ver que este el usuario registrado y que pueda hacer la reseña, si no esta registrado no puede hacer la reseña
 
 
     }
