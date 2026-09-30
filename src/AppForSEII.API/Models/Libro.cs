@@ -7,8 +7,9 @@ namespace AppForSEII.API.Models
             CompraItems = new List<CompraItem>();
             ResenaItems = new List<ResenaItem>();
             ReposicionItems = new List<ReposicionItem>();
+            SubastaItems = new List<SubastaItem>();
         }
-        public Libro(int id, string titulo, string tipoLibro, string autor, int calificacionMedia, DateTime fechaLanzamiento, IList<CompraItem> compraItems, IList<ResenaItem> resenaItems)
+        public Libro(int id, string titulo, string tipoLibro, string autor, int calificacionMedia, DateTime fechaLanzamiento, IList<CompraItem> compraItems, IList<ResenaItem> resenaItems, IList<SubastaItem> subastaItems)
         {
             Id = id;
             Titulo = titulo;
@@ -17,6 +18,8 @@ namespace AppForSEII.API.Models
              CalificacionMedia = calificacionMedia;
             FechaLanzamiento = fechaLanzamiento;
             ResenaItems = resenaItems;
+            SubastaItems = subastaItems;
+            
         }
 
         public int Id{get;set;}
