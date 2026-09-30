@@ -20,8 +20,7 @@ namespace AppForSEII.API.Models
         public Compra Compra { get; set; } 
         public int CompraId { get; set; } 
 
-        [Required]
-        [Range(2, int.MaxValue, ErrorMessage = "La cantidad de compra debe ser mayor que 1.")]
+        [Range(1, int.MaxValue, ErrorMessage = "La cantidad de compra debe ser mayor que 1")]
         public int Cantidad { get; set; }
     
      }
