@@ -29,6 +29,7 @@ namespace AppForSEII.API.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime FechaCompra{get;set;}
 
+        [Precision(10, 2)]
         public double PrecioTotal{get;set;}
 
         [StringLength(10, MinimumLength = 5, ErrorMessage = "El código de descuento debe tener entre 5 y 10 caracteres.")]
