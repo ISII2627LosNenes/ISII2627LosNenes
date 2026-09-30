@@ -9,17 +9,20 @@ namespace AppForSEII.API.Models
             ReposicionItems = new List<ReposicionItem>();
             SubastaItems = new List<SubastaItem>();
         }
-        public Libro(int id, string titulo, string tipoLibro, string autor, int calificacionMedia, DateTime fechaLanzamiento, IList<CompraItem> compraItems, IList<ResenaItem> resenaItems, IList<SubastaItem> subastaItems)
+        public Libro(int id, string titulo, string tipoLibro, string autor, int calificacionMedia, DateTime fechaLanzamiento, decimal precioCompra, int stock, IList<CompraItem> compraItems, IList<ResenaItem> resenaItems, IList<SubastaItem> subastaItems, IList<ReposicionItem> reposicionItems)
         {
             Id = id;
             Titulo = titulo;
             TipoLibro = tipoLibro;
             Autor = autor;
-             CalificacionMedia = calificacionMedia;
+            CalificacionMedia = calificacionMedia;
             FechaLanzamiento = fechaLanzamiento;
+            PrecioCompra = precioCompra;
+            Stock = stock;
+            CompraItems = compraItems;
             ResenaItems = resenaItems;
             SubastaItems = subastaItems;
-            
+            ReposicionItems = reposicionItems;
         }
 
         public int Id{get;set;}
