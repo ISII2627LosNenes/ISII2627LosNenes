@@ -3,6 +3,9 @@ namespace AppForSEII.API.Models
 [PrimaryKey(nameof(LibroId), nameof(CompraId))]
     public class CompraItem
     {
+        public CompraItem()
+        {
+        }
         public CompraItem(int cantidad, int libroId, int compraId) 
         { 
             Cantidad = cantidad; 
