@@ -2,9 +2,10 @@ namespace AppForSEII.API.Models
 {
     public class Subasta
     {
+       
         public Subasta()
         {
-            
+            SubastaItems = new List<SubastaItem>();
         }
 
         public Subasta(int id, DateTime fechasubasta, decimal precio, List<SubastaItem> subastaItems)
