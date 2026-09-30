@@ -49,6 +49,10 @@ namespace AppForSEII.API.Models
         public int Stock { get; set; }
 
         public Genero Genero { get; set; }
+        public int GeneroId { get; set; }
+
+        public Editorial Editorial { get; set; }
+        public int EditorialId { get; set; }
 
         public IList<CompraItem> CompraItems { get; set; }
 
