@@ -3,6 +3,9 @@ namespace AppForSEII.API.Models
     [PrimaryKey(nameof(ReposicionId),nameof(LibroId))]
     public class ReposicionItem
     {
+        public ReposicionItem()
+        {
+        }
         public ReposicionItem(Reposicion reposicion,  int cantidadReposicion, Libro libro)
         {
             ReposicionId = reposicion.Id;
