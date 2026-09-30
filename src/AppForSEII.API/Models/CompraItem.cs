@@ -6,12 +6,15 @@ namespace AppForSEII.API.Models
         public CompraItem()
         {
         }
-        public CompraItem(int cantidad, int libroId, int compraId) 
+        public CompraItem(int cantidad, Libro libro, Compra compra) 
         { 
-            Cantidad = cantidad; 
-            LibroId = libroId; 
-            CompraId = compraId;
+            Cantidad = cantidad;
+            Libro = libro;
+            LibroId = libro.Id;
+            Compra = compra;
+            CompraId = compra.Id;
         } 
+
         public Libro Libro { get; set; }
         public int LibroId { get; set; } 
         public Compra Compra { get; set; } 
