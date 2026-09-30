@@ -2,6 +2,9 @@ namespace AppForSEII.API.Models
 {
     public class Paypal : MetodoPago
     {
+        public Paypal()
+        {
+        }
         public Paypal(string numeroTelefono) : base()
         {
             NumeroTelefono = numeroTelefono;
