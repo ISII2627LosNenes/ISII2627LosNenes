@@ -22,5 +22,7 @@ namespace AppForSEII.API.Models
         [StringLength(100, MinimumLength = 20, ErrorMessage = "El comentario debe tener entre 20 y 100 caracteres.")]
         public string? Comentario { get; set; }
         public IList<ReposicionItem> ReposicionItems { get; set; }
+
+        public  ApplicationUser Cliente { get; set; } 
     }
 }
