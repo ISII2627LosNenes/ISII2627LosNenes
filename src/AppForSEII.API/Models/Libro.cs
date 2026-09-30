@@ -6,6 +6,7 @@ namespace AppForSEII.API.Models
         {
             CompraItems = new List<CompraItem>();
             ResenaItems = new List<ResenaItem>();
+            ReposicionItems = new List<ReposicionItem>();
         }
         public Libro(int id, string titulo, string tipoLibro, string autor, int calificacionMedia, DateTime fechaLanzamiento, IList<CompraItem> compraItems, IList<ResenaItem> resenaItems)
         {
@@ -35,5 +36,6 @@ namespace AppForSEII.API.Models
 
         public IList<ResenaItem> ResenaItems { get; set; }
         
+        public IList<ReposicionItem> ReposicionItems { get; set; }
     }
 }
