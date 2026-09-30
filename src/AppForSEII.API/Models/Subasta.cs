@@ -33,6 +33,8 @@ namespace AppForSEII.API.Models
 
         public MetodoPago MetodoPago { get; set; }
 
+        public  ApplicationUser Cliente { get; set; } 
+
     }
 
 }
