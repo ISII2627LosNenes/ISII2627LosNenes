@@ -2,6 +2,10 @@ namespace AppForSEII.API.Models
 {
     public class Reposicion
     {
+        public Reposicion()
+        {
+            ReposicionItems = new List<ReposicionItem>();
+        }
         public Reposicion(int id, DateTime fechaReposicion, decimal precioTotal, string comentario)
         {
             Id = id;
@@ -17,5 +21,6 @@ namespace AppForSEII.API.Models
         public decimal PrecioTotal { get; set; }
         [StringLength(100, MinimumLength = 20, ErrorMessage = "El comentario debe tener entre 20 y 100 caracteres.")]
         public string? Comentario { get; set; }
+        public IList<ReposicionItem> ReposicionItems { get; set; }
     }
 }
