@@ -38,6 +38,9 @@ namespace AppForSEII.API.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime FechaLanzamiento{get;set;}
 
+        [Precision(10, 2)]
+        public decimal PrecioCompra { get; set; }
+
         public IList<CompraItem> CompraItems { get; set; }
 
         public IList<ResenaItem> ResenaItems { get; set; }
