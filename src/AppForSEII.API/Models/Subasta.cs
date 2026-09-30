@@ -16,6 +16,7 @@ namespace AppForSEII.API.Models
             SubastaItems = subastaItems;
             MetodoPago = metodopago;
             Cliente = cliente;
+            MetodoPagoID = metodopago.Id;
 
 
         }
@@ -34,6 +35,10 @@ namespace AppForSEII.API.Models
         public IList<SubastaItem> SubastaItems { get; set; } 
 
         public MetodoPago MetodoPago { get; set; }
+
+        public int MetodoPagoID { get; set; }
+
+
 
         public virtual ApplicationUser Cliente { get; set; } //Para ver que este el usuario registrado y que pueda hacer la reseña, si no esta registrado no puede hacer la reseña
 
