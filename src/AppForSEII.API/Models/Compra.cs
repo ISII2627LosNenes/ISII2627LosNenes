@@ -12,14 +12,15 @@ namespace AppForSEII.API.Models
         {
             Id = id;
         }
-        
 
-        public Compra(int id, DateTime fechaCompra, double precioTotal,string codigoDescuento=null)
+
+        public Compra(DateTime fechaCompra, Ilist <CompraItem> compraItems, string codigoDescuento=null)
         {
-        Id = id;
-        FechaCompra = fechaCompra;
-        PrecioTotal = precioTotal;
-        CodigoDescuento = codigoDescuento;
+            PrecioTotal = decimal.Round(compraItems.Sum(ci => ci.Libro.PrecioCompra * ci.Cantidad), 2);
+            FechaCompra = fechaCompra;
+            CompraItems = compraItems;
+            CodigoDescuento = codigoDescuento;
+
         }
 
         public int Id{get;set;}
