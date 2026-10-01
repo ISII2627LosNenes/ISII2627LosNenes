@@ -19,6 +19,13 @@ namespace AppForSEII.API.Data {
                 logger.LogError(ex, "An error occurred seeding the Users in the Database.");
             }
 
+            try {
+                SeedGenerosEditorialesYLibros(dbContext);
+            }
+            catch (Exception ex) {
+                logger.LogError(ex, "An error occurred seeding the Books, Genres and Editorials in the Database.");
+            }
+
  
 
         }
