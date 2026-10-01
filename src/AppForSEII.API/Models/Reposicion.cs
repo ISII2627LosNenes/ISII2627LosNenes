@@ -6,12 +6,14 @@ namespace AppForSEII.API.Models
         {
             ReposicionItems = new List<ReposicionItem>();
         }
-        public Reposicion(int id, DateTime fechaReposicion, decimal precioTotal, string comentario)
+        public Reposicion(int id, DateTime fechaReposicion, decimal precioTotal, string comentario, ApplicationUser cliente, IList<ReposicionItem> reposicionItems)
         {
             Id = id;
             FechaReposicion = fechaReposicion;
             PrecioTotal = precioTotal;
             Comentario = comentario;
+            Cliente = cliente;
+            ReposicionItems = reposicionItems;
         }
         public int Id { get; set; }
         
