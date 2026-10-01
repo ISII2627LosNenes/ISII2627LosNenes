@@ -23,6 +23,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<SubastaItem> SubastaItem{get;set;}
     public DbSet<Compra> Compra{get;set;}
     public DbSet<Reposicion> Reposicion{get;set;}
+    public DbSet<ReposicionItem> ReposicionItem{get;set;}
 
     public DbSet<CompraItem> CompraItem{get;set;}
 

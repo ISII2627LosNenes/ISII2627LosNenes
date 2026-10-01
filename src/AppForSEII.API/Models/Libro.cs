@@ -9,17 +9,24 @@ namespace AppForSEII.API.Models
             ReposicionItems = new List<ReposicionItem>();
             SubastaItems = new List<SubastaItem>();
         }
-        public Libro(int id, string titulo, string tipoLibro, string autor, int calificacionMedia, DateTime fechaLanzamiento, IList<CompraItem> compraItems, IList<ResenaItem> resenaItems, IList<SubastaItem> subastaItems)
+        public Libro(int id, Genero genero, int generoId, Editorial editorial, int editorialId, string titulo, string tipoLibro, string autor, int calificacionMedia, DateTime fechaLanzamiento, decimal precioCompra, int stock, IList<CompraItem> compraItems, IList<ResenaItem> resenaItems, IList<SubastaItem> subastaItems, IList<ReposicionItem> reposicionItems)
         {
             Id = id;
             Titulo = titulo;
+            GeneroId = generoId;
+            Genero = genero;
+            EditorialId = editorialId;
+            Editorial = editorial;
             TipoLibro = tipoLibro;
             Autor = autor;
-             CalificacionMedia = calificacionMedia;
+            CalificacionMedia = calificacionMedia;
             FechaLanzamiento = fechaLanzamiento;
+            PrecioCompra = precioCompra;
+            Stock = stock;
+            CompraItems = compraItems;
             ResenaItems = resenaItems;
             SubastaItems = subastaItems;
-            
+            ReposicionItems = reposicionItems;
         }
 
         public int Id{get;set;}
@@ -34,6 +41,18 @@ namespace AppForSEII.API.Models
          [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime FechaLanzamiento{get;set;}
+
+        [Precision(10, 2)]
+        public decimal PrecioCompra { get; set; }
+
+        [Range(0, int.MaxValue, ErrorMessage = "El stock no puede ser negativo")]
+        public int Stock { get; set; }
+
+        public Genero Genero { get; set; }
+        public int GeneroId { get; set; }
+
+        public Editorial Editorial { get; set; }
+        public int EditorialId { get; set; }
 
         public IList<CompraItem> CompraItems { get; set; }
 
