@@ -19,6 +19,13 @@ namespace AppForSEII.API.Data {
                 logger.LogError(ex, "An error occurred seeding the Users in the Database.");
             }
 
+            try {
+                SeedGenerosEditorialesYLibros(dbContext);
+            }
+            catch (Exception ex) {
+                logger.LogError(ex, "An error occurred seeding the Books, Genres and Editorials in the Database.");
+            }
+
  
 
         }
@@ -71,7 +78,64 @@ namespace AppForSEII.API.Data {
 
         }
 
+         public static void SeedGenerosEditorialesYLibros(ApplicationDbContext dbcontext) {
+            string[] nombresGeneros = { "Ciencia Ficción", "Fantasía", "Novela Histórica", "Terror" };
+            List<Genero> generos = new List<Genero>();
 
+            foreach (string nombre in nombresGeneros) {
+                var genero = dbcontext.Genero.FirstOrDefault(g => g.Nombre == nombre);
+                if (genero == null) {
+                    genero = new Genero { Nombre = nombre };
+                    dbcontext.Genero.Add(genero);
+                }
+                generos.Add(genero);
+            }
+
+            string[] nombresEditoriales = { "Minotauro", "Nova", "Alianza Editorial" };
+            List<Editorial> editoriales = new List<Editorial>();
+
+            foreach (string nombre in nombresEditoriales) {
+                var editorial = dbcontext.Editorial.FirstOrDefault(e => e.Nombre == nombre);
+                if (editorial == null) {
+                    editorial = new Editorial { Nombre = nombre };
+                    dbcontext.Editorial.Add(editorial);
+                }
+                editoriales.Add(editorial);
+            }
+
+            dbcontext.SaveChanges();
+
+            if (dbcontext.Libro.FirstOrDefault(l => l.Titulo == "Dune") == null) {
+                var libro1 = new Libro {
+                    Titulo = "Dune",
+                    TipoLibro = "Tapa Blanda",
+                    Autor = "Frank Herbert",
+                    CalificacionMedia = 5,
+                    FechaLanzamiento = new DateTime(1965, 8, 1),
+                    PrecioCompra = 19.99m,
+                    Stock = 50,
+                    GeneroId = generos[0].Id,    
+                    EditorialId = editoriales[1].Id 
+                };
+                dbcontext.Libro.Add(libro1);
+            }
+            if (dbcontext.Libro.FirstOrDefault(l => l.Titulo == "El Señor de los Anillos") == null) {
+                var libro2 = new Libro {
+                    Titulo = "El Señor de los Anillos",
+                    TipoLibro = "Tapa Dura",
+                    Autor = "J.R.R. Tolkien",
+                    CalificacionMedia = 5,
+                    FechaLanzamiento = new DateTime(1954, 7, 29),
+                    PrecioCompra = 35.50m,
+                    Stock = 25,
+                    GeneroId = generos[1].Id,    
+                    EditorialId = editoriales[0].Id 
+                };
+                dbcontext.Libro.Add(libro2);
+            }
+
+            dbcontext.SaveChanges();
+        }
 
 
 
