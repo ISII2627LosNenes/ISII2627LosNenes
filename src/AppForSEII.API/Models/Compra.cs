@@ -7,8 +7,8 @@ namespace AppForSEII.API.Models
             CompraItems = new List<CompraItem>();
         }
 
-        public Compra(int id, DateTime fechaCompra, IList <CompraItem> compraItems, string codigoDescuento=null):
-         this(fechaCompra, compraItems, codigoDescuento)
+        public Compra(int id, DateTime fechaCompra, IList <CompraItem> compraItems, string codigoDescuento, ApplicationUser cliente) :
+         this(fechaCompra, compraItems, codigoDescuento, cliente)
         {
             Id = id;
         }
