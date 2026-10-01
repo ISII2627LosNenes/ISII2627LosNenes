@@ -1,0 +1,11 @@
+@startuml
+class ReposicionItem {
+    + ReposicionItem()
+    + ReposicionItem(reposicion:Reposicion, cantidadReposicion:int, libro:Libro)
+    + CantidadReposicion : int <<get>> <<set>>
+    + ReposicionId : int <<get>> <<set>>
+    + LibroId : int <<get>> <<set>>
+}
+ReposicionItem --> "Libro" Libro
+ReposicionItem --> "Reposicion" Reposicion
+@enduml
