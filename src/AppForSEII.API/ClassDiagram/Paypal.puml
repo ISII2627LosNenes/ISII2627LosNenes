@@ -1,0 +1,8 @@
+@startuml
+class Paypal {
+    + Paypal()
+    + Paypal(numeroTelefono:string)
+    + NumeroTelefono : string <<get>> <<set>>
+}
+MetodoPago <|-- Paypal
+@enduml
