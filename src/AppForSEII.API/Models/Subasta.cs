@@ -8,14 +8,14 @@ namespace AppForSEII.API.Models
             SubastaItems = new List<SubastaItem>();
         }
 
-        public Subasta(int id, DateTime fechasubasta, decimal precio, IList<SubastaItem> subastaItems, MetodoPago metodopago, ApplicationUser cliente)
+        public Subasta(int id, DateTime fechasubasta, decimal precio, IList<SubastaItem> subastaItems, MetodoPago metodopago, ApplicationUser applicationUser)
         {
             Id = id;
             FechaSubasta = fechasubasta;
             PrecioSubasta = precio;
             SubastaItems = subastaItems;
             MetodoPago = metodopago;
-            Cliente = cliente;
+            ApplicationUser = applicationUser;
             MetodoPagoID = metodopago.Id;
 
 
@@ -38,8 +38,7 @@ namespace AppForSEII.API.Models
 
         public int MetodoPagoID { get; set; }
 
-fhfjfh
-
+        public ApplicationUser ApplicationUser { get; set; }
 
 
     }
