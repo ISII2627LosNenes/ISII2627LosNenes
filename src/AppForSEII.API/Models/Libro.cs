@@ -46,8 +46,9 @@ namespace AppForSEII.API.Models
         [Precision(10, 2)]
         public decimal PrecioCompra { get; set; }
 
+        [Precision(10, 2)]
         public decimal PrecioReposicion { get; set; }
-        
+
         [Range(0, int.MaxValue, ErrorMessage = "El stock no puede ser negativo")]
         public int Stock { get; set; }
 
