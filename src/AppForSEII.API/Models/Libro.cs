@@ -9,7 +9,7 @@ namespace AppForSEII.API.Models
             ReposicionItems = new List<ReposicionItem>();
             SubastaItems = new List<SubastaItem>();
         }
-        public Libro(int id, Genero genero, int generoId, Editorial editorial, int editorialId, string titulo, string tipoLibro, string autor, int calificacionMedia, DateTime fechaLanzamiento, decimal precioCompra, int stock, IList<CompraItem> compraItems, IList<ResenaItem> resenaItems, IList<SubastaItem> subastaItems, IList<ReposicionItem> reposicionItems)
+        public Libro(int id, Genero genero, int generoId, Editorial editorial, int editorialId, string titulo, string tipoLibro, string autor, int calificacionMedia, DateTime fechaLanzamiento, decimal precioCompra, decimal precioReposicion, int stock, IList<CompraItem> compraItems, IList<ResenaItem> resenaItems, IList<SubastaItem> subastaItems, IList<ReposicionItem> reposicionItems)
         {
             Id = id;
             Titulo = titulo;
@@ -22,6 +22,7 @@ namespace AppForSEII.API.Models
             CalificacionMedia = calificacionMedia;
             FechaLanzamiento = fechaLanzamiento;
             PrecioCompra = precioCompra;
+            PrecioReposicion=precioReposicion;
             Stock = stock;
             CompraItems = compraItems;
             ResenaItems = resenaItems;
@@ -44,6 +45,9 @@ namespace AppForSEII.API.Models
 
         [Precision(10, 2)]
         public decimal PrecioCompra { get; set; }
+
+        [Precision(10, 2)]
+        public decimal PrecioReposicion { get; set; }
 
         [Range(0, int.MaxValue, ErrorMessage = "El stock no puede ser negativo")]
         public int Stock { get; set; }
