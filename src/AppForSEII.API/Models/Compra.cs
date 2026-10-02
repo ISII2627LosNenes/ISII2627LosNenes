@@ -37,6 +37,8 @@ namespace AppForSEII.API.Models
          public string? CodigoDescuento { get; set; }
 
         public IList<CompraItem> CompraItems { get; set; } = new List<CompraItem>();
+
+        [Required(ErrorMessage = "El cliente es obligatorio.")]
         public  ApplicationUser Cliente { get; set; } 
 
     }
