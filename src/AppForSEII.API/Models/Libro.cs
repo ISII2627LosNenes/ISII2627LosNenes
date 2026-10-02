@@ -35,6 +35,7 @@ namespace AppForSEII.API.Models
         [Required(ErrorMessage = "El título es obligatorio.")]
         public string Titulo{get;set;}
 
+        [Required(ErrorMessage = "El tipo de libro es obligatorio.")]
         [StringLength(50, MinimumLength = 10, ErrorMessage = "El tipo de libro debe tener entre 10 y 50 caracteres.")]
         public string TipoLibro{get;set;}
         public string Autor{get;set;}
