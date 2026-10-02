@@ -20,15 +20,20 @@ namespace AppForSEII.API.Models
         }
         public int Id{get;set;}
 
+        [Required(ErrorMessage = "La calificación es obligatoria")]
         [StringLength(20, MinimumLength = 10, ErrorMessage = "El título debe tener entre 10 y 20 caracteres.")]
         public string Titulo{get;set;}
 
-
+        [Required(ErrorMessage = "El nombre del cliente es obligatorio")]
         public string NombreCliente{get;set;}
+        
+        [Required(ErrorMessage = "El apellido del cliente es obligatorio")]
         public string ApellidoCliente{get;set;}
 
+        [Required(ErrorMessage = "La dirección del cliente es obligatoria")]
         public string DireccionCliente{get;set;}
 
+        [Required(ErrorMessage = "El teléfono del cliente es obligatorio")]
         public string TelefonoCliente{get;set;}
 
         
