@@ -23,6 +23,7 @@ namespace AppForSEII.API.Models
         public Compra Compra { get; set; } 
         public int CompraId { get; set; } 
 
+        [Required(ErrorMessage = "La cantidad de compra es obligatoria.")]
         [Range(1, int.MaxValue, ErrorMessage = "La cantidad de compra debe ser mayor que 1")]
         public int Cantidad { get; set; }
     
