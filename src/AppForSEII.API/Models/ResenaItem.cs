@@ -27,7 +27,7 @@ namespace AppForSEII.API.Models
         public string ? Descripcion{get;set;}
 
         
-
+        [Required(ErrorMessage = "La calificación es obligatoria")]
         [Range(1,5, ErrorMessage = "Calificación media tiene que estar entre 1 y 5")]
         public int Calificacion{get;set;}
     }
