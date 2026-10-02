@@ -15,8 +15,11 @@ namespace AppForSEII.API.Models
             CompraId = compra.Id;
         } 
 
+        [Required(ErrorMessage = "El libro es obligatorio.")]
         public Libro Libro { get; set; }
         public int LibroId { get; set; } 
+
+        [Required(ErrorMessage = "La compra es obligatoria.")]
         public Compra Compra { get; set; } 
         public int CompraId { get; set; } 
 
