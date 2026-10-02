@@ -59,9 +59,12 @@ namespace AppForSEII.API.Models
         [Range(0, int.MaxValue, ErrorMessage = "El stock no puede ser negativo")]
         public int Stock { get; set; }
 
+
+        [Required(ErrorMessage = "El género es obligatorio.")]
         public Genero Genero { get; set; }
         public int GeneroId { get; set; }
 
+        [Required(ErrorMessage = "La editorial es obligatoria.")]
         public Editorial Editorial { get; set; }
         public int EditorialId { get; set; }
 
