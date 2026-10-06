@@ -30,6 +30,7 @@ namespace AppForSEII.API.Models
             ReposicionItems = reposicionItems;
         }
 
+        [Key]
         public int Id{get;set;}
 
         [Required(ErrorMessage = "El título es obligatorio.")]
