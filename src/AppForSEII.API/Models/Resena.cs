@@ -18,6 +18,7 @@ namespace AppForSEII.API.Models
             DireccionCliente = direccionCliente;
             TelefonoCliente = telefonoCliente;
         }
+        [Key]
         public int Id{get;set;}
 
         [Required(ErrorMessage = "La calificación es obligatoria")]
