@@ -12,6 +12,7 @@ namespace AppForSEII.API.Models
             Nombre = nombre;
         }
 
+        [Key]
         public int Id{get;set;}
 
         public string Nombre{get;set;}
