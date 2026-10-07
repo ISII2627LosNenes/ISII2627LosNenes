@@ -23,7 +23,7 @@ namespace AppForSEII.API.Models
         public decimal PrecioTotal { get; set; }
         [StringLength(100, MinimumLength = 20, ErrorMessage = "El comentario debe tener entre 20 y 100 caracteres.")]
         public string? Comentario { get; set; }
-        public IList<ReposicionItem> ReposicionItems { get; set; }
+        public IList<ReposicionItem> ReposicionItems { get; set; } = new List<ReposicionItem>();
 
         public  ApplicationUser Admin { get; set; } 
     }
