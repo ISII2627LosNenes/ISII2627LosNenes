@@ -27,6 +27,7 @@ namespace AppForSEII.API.Models
 
         }
 
+        [Key]
         public int Id{get;set;}
 
         [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
