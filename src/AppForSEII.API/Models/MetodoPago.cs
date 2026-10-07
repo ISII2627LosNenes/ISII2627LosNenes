@@ -10,6 +10,8 @@ namespace AppForSEII.API.Models
         {
         }
         public int Id { get; set; }
+
+        public IList<Compra> Compras { get; set; } = new List<Compra>();
         
     }
 }
