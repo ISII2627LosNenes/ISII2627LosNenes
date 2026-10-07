@@ -73,7 +73,7 @@ namespace AppForSEII.API.Models
 
         public IList<ResenaItem> ResenaItems { get; set; }
         
-        public IList<ReposicionItem> ReposicionItems { get; set; }
+        public IList<ReposicionItem> ReposicionItems { get; set; } = new List<ReposicionItem>();
 
         public IList<SubastaItem> SubastaItems { get; set; }    
     }
