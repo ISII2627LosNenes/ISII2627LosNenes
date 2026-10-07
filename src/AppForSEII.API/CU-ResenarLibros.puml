@@ -1,4 +1,9 @@
 @startuml
 hide methods
 !include ClassDiagram/Resena.puml
+!include ClassDiagram/ResenaItem.puml
+!include ClassDiagram/Libro.puml
+!include ClassDiagram/ApplicationUser.puml
+!include ClassDiagram/Editorial.puml
+!include ClassDiagram/Genero.puml
 @enduml
