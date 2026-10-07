@@ -44,7 +44,9 @@ namespace AppForSEII.API.Models
         [Required(ErrorMessage = "El cliente es obligatorio.")]
         public  ApplicationUser Cliente { get; set; } 
 
-    
+        [Required(ErrorMessage = "El método de pago es obligatorio.")]
+        public MetodoPago MetodoPago { get; set; }
+        public int MetodoPagoId { get; set; }
 
     }
 }
