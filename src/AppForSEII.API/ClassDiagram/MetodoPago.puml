@@ -7,4 +7,6 @@ abstract class MetodoPago {
 class "IList`1"<T> {
 }
 MetodoPago o-> "Compras<Compra>" "IList`1"
+MetodoPago o-> "Reposiciones<Reposicion>" "IList`1"
+MetodoPago o-> "Subastas<Subasta>" "IList`1"
 @enduml
