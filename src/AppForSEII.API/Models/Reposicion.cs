@@ -44,8 +44,8 @@ namespace AppForSEII.API.Models
         [Required(ErrorMessage = "El método de pago es obligatorio.")]
         public MetodoPago MetodoPago { get; set; }
 
-        public IList<ReposicionItem> ReposicionItems { get; set; }
-
+        public IList<ReposicionItem> ReposicionItems { get; set; } = new List<ReposicionItem>();
+        [Required(ErrorMessage = "Es necesario ser admin.")]
         public  ApplicationUser Admin { get; set; } 
     }
 }
