@@ -6,4 +6,6 @@ hide methods
 !include ClassDiagram/ApplicationUser.puml
 !include ClassDiagram/Editorial.puml
 !include ClassDiagram/Genero.puml
+remove DateTime
+remove *List*
 @enduml

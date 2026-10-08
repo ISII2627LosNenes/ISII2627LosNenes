@@ -9,6 +9,6 @@ class Reposicion {
 class "IList`1"<T> {
 }
 Reposicion --> "FechaReposicion" DateTime
-Reposicion --> "ReposicionItems<ReposicionItem>" "IList`1"
+Reposicion o-> "ReposicionItems<ReposicionItem>" "IList`1"
 Reposicion --> "Admin" ApplicationUser
 @enduml

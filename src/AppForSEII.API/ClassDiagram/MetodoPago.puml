@@ -4,4 +4,7 @@ abstract class MetodoPago {
     + MetodoPago()
     + Id : int <<get>> <<set>>
 }
+class "IList`1"<T> {
+}
+MetodoPago o-> "Compras<Compra>" "IList`1"
 @enduml

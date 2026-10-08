@@ -1,7 +1,7 @@
 @startuml
 class Subasta {
     + Subasta()
-    + Subasta(id:int, fechasubasta:DateTime, precio:decimal, subastaItems:IList<SubastaItem>, metodopago:MetodoPago, applicationUser:ApplicationUser)
+    + Subasta(id:int, fechasubasta:DateTime, precio:decimal, subastaItems:IList<SubastaItem>, metodopago:MetodoPago, cliente:ApplicationUser)
     + Id : int <<get>> <<set>>
     + PrecioSubasta : decimal <<get>> <<set>>
     + MetodoPagoID : int <<get>> <<set>>
@@ -11,5 +11,5 @@ class "IList`1"<T> {
 Subasta --> "FechaSubasta" DateTime
 Subasta --> "SubastaItems<SubastaItem>" "IList`1"
 Subasta --> "MetodoPago" MetodoPago
-Subasta --> "ApplicationUser" ApplicationUser
+Subasta --> "Cliente" ApplicationUser
 @enduml
