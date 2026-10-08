@@ -9,4 +9,6 @@ hide methods
 !include ClassDiagram/Visa.puml
 !include ClassDiagram/GooglePay.puml
 !include ClassDiagram/Paypal.puml
+remove DateTime
+remove *List*
 @enduml
