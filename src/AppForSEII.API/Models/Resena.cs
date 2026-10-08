@@ -44,6 +44,6 @@ namespace AppForSEII.API.Models
 
         public IList<ResenaItem> ResenaItems { get; set; } = new List<ResenaItem>();
 
-        public  ApplicationUser Cliente { get; set; } = new ApplicationUser();//Para ver que este el usuario registrado y que pueda hacer la reseña, si no esta registrado no puede hacer la reseña
+        public  ApplicationUser Cliente { get; set; } 
     }
 }
