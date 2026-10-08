@@ -9,7 +9,11 @@ namespace AppForSEII.API.Models
         public MetodoPago()
         {
         }
+
+        [Key]
         public int Id { get; set; }
+
+        public IList<Compra> Compras { get; set; } = new List<Compra>();
         
     }
 }
