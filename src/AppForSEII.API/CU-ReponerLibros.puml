@@ -1,4 +1,14 @@
 @startuml
 hide methods
 !include ClassDiagram/Reposicion.puml
+!include ClassDiagram/Libro.puml
+!include ClassDiagram/ApplicationUser.puml
+!include ClassDiagram/Genero.puml
+!include ClassDiagram/ReposicionItem.puml
+!include ClassDiagram/MetodoPago.puml
+!include ClassDiagram/Visa.puml
+!include ClassDiagram/GooglePay.puml
+!include ClassDiagram/Paypal.puml
+remove DateTime
+remove *List*
 @enduml

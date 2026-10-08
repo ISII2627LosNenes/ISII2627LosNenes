@@ -1,13 +1,17 @@
 @startuml
 class Resena {
     + Resena()
-    + Resena(id:int, fecharesena:DateTime, titulo:string, resenaItems:IList<ResenaItem>, cliente:ApplicationUser)
+    + Resena(id:int, fecharesena:DateTime, titulo:string, resenaItems:IList<ResenaItem>, cliente:ApplicationUser, nombreCliente:string, apellidoCliente:string, direccionCliente:string, telefonoCliente:string)
     + Id : int <<get>> <<set>>
     + Titulo : string <<get>> <<set>>
+    + NombreCliente : string <<get>> <<set>>
+    + ApellidoCliente : string <<get>> <<set>>
+    + DireccionCliente : string <<get>> <<set>>
+    + TelefonoCliente : string <<get>> <<set>>
 }
 class "IList`1"<T> {
 }
 Resena --> "Fecharesena" DateTime
-Resena --> "ResenaItems<ResenaItem>" "IList`1"
-Resena --> "Cliente" ApplicationUser
+Resena o-> "ResenaItems<ResenaItem>" "IList`1"
+Resena o-> "Cliente" ApplicationUser
 @enduml
