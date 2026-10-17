@@ -63,24 +63,25 @@ namespace AppForSEII.API.Controllers
             [ProducesResponseType(typeof(IList<LibroParaComprarDTO>), (int)HttpStatusCode.OK)]
             [ProducesResponseType(typeof(ValidationProblemDetails), (int)HttpStatusCode.BadRequest)]
 
-            public async Task<ActionResult> GetLibrosParaComprar(string? titulo, string? genero)
+            public async Task<ActionResult> GetLibrosParaComprar(string? genero, decimal? precioMax)
             {
             
                 IList<LibroParaComprarDTO> libros = await _context.Libro
                 .Include(l => l.Genero)
                 .Include(l => l.Editorial)
+
+                //Lo filtramos por stock>0 siempre, por el género y que el precio sea menor o igual al indicado como máximo
                 .Where(l => l.Stock > 0 
-                         && (titulo == null || l.Titulo.Contains(titulo))
-                         && (genero == null || l.Genero.Nombre.Equals(genero)))
+                         && (genero == null || l.Genero.Nombre.Equals(genero))
+                         && (precioMax == null || l.PrecioCompra <= precioMax))
                 .OrderBy(l => l.Titulo)
                 .Select(l => new LibroParaComprarDTO(
                     l.Id,
                     l.Titulo,
-                    l.Autor,
+                    l.FechaLanzamiento,
                     l.Genero.Nombre,
                     l.Editorial.Nombre,
-                    l.PrecioCompra,
-                    l.Stock
+                    l.PrecioCompra
                 ))
                 .ToListAsync();
 
