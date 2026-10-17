@@ -5,22 +5,24 @@ namespace AppForSEII.API.DTOs.LibroDTOs
 {
     public class LibroParaComprarDTO
     {
-        public LibroParaComprarDTO(int id, string titulo, string autor, string genero, string editorial, decimal precioCompra, int stock)
+        public LibroParaComprarDTO(int id, string titulo, DateTime fechaLanzamiento, string genero, string editorial, decimal precioCompra)
         {
             Id = id;
             Titulo = titulo;
-            Autor = autor;
+            FechaLanzamiento = fechaLanzamiento;
             Genero = genero;
             Editorial = editorial;
             PrecioCompra = precioCompra;
-            Stock = stock;
+                        
         }
 
         public int Id { get; set; }
 
         public string Titulo { get; set; }
 
-        public string Autor { get; set; }
+        [DataType(System.ComponentModel.DataAnnotations.DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime FechaLanzamiento { get; set; }
 
         public string Genero { get; set; }
 
@@ -29,23 +31,23 @@ namespace AppForSEII.API.DTOs.LibroDTOs
         [DataType(System.ComponentModel.DataAnnotations.DataType.Currency)]
         public decimal PrecioCompra { get; set; }
 
-        public int Stock { get; set; }
+        
 
         public override bool Equals(object? obj)
         {
             return obj is LibroParaComprarDTO dTO &&
                 Id == dTO.Id &&
                 Titulo == dTO.Titulo &&
-                Autor == dTO.Autor &&
+                FechaLanzamiento == dTO.FechaLanzamiento &&
                 Genero == dTO.Genero &&
                 Editorial == dTO.Editorial &&
-                PrecioCompra == dTO.PrecioCompra &&
-                Stock == dTO.Stock;
+                PrecioCompra == dTO.PrecioCompra;
+                
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Id, Titulo, Autor, Genero, Editorial, PrecioCompra, Stock);
+            return HashCode.Combine(Id, Titulo, FechaLanzamiento, Genero, Editorial, PrecioCompra);
         }
     }
 }
