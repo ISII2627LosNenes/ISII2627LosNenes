@@ -10,7 +10,7 @@ namespace AppForSEII.API.Controllers
 [   Route("api/[controller]")]
     [ApiController]
     public class LibroController : ControllerBase
-        {
+    {
             private readonly ApplicationDbContext _context;
             private readonly ILogger<LibroController> _logger;
 
@@ -57,6 +57,36 @@ namespace AppForSEII.API.Controllers
             // Devuelve la lista de libros y el mensaje http de exito 200 (OK)
             return Ok(libros);
             }
+
+            [HttpGet]
+            [Route("[action]")]
+            [ProducesResponseType(typeof(IList<LibroParaComprarDTO>), (int)HttpStatusCode.OK)]
+            [ProducesResponseType(typeof(ValidationProblemDetails), (int)HttpStatusCode.BadRequest)]
+
+            public async Task<ActionResult> GetLibrosParaComprar(string? genero, decimal? precioMax)
+            {
             
-        }
+                IList<LibroParaComprarDTO> libros = await _context.Libro
+                .Include(l => l.Genero)
+                .Include(l => l.Editorial)
+
+                //Lo filtramos por stock>0 siempre, por el género y que el precio sea menor o igual al indicado como máximo
+                .Where(l => l.Stock > 0 
+                         && (genero == null || l.Genero.Nombre.Equals(genero))
+                         && (precioMax == null || l.PrecioCompra <= precioMax))
+                .OrderBy(l => l.Titulo)
+                .Select(l => new LibroParaComprarDTO(
+                    l.Id,
+                    l.Titulo,
+                    l.FechaLanzamiento,
+                    l.Genero.Nombre,
+                    l.Editorial.Nombre,
+                    l.PrecioCompra
+                ))
+                .ToListAsync();
+
+            return Ok(libros);
+            }
+            
+    }
 }
